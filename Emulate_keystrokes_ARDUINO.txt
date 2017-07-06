@@ -1,0 +1,48 @@
+////////////////////////////////////////
+// Emulate Key-strokes
+// Author :- Akshat and Chandan
+////////////////////////////////////////
+import processing.serial.*;
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+ 
+Robot robot;
+Serial myPort;  // Create object from Serial class
+int val;      // Data received from the serial port
+
+void setup() 
+{
+  size(200, 200);
+  
+  String portName = Serial.list()[0];
+  myPort = new Serial(this, portName, 9600);
+   try { 
+    robot = new Robot();
+  } 
+  catch (AWTException e) {
+    e.printStackTrace();
+  }
+}
+void serialEvent(Serial p)                      // ISR triggerd by "port.buffer(129);"
+{ 
+   val = myPort.read();
+   background(255);             // Set background to white
+  if (val == 'a') {              // If the serial value is 0,
+    fill(0);                     // set fill to black
+    //robot.keyPress(KeyEvent.VK_DOWN); // press down-key
+    robot.keyPress(KeyEvent.VK_SPACE); // press Space-key
+    delay(100);
+    //robot.keyRelease(KeyEvent.VK_DOWN ); // down-key
+    robot.keyRelease(KeyEvent.VK_SPACE ); // Space-key
+    fill(255);
+  } 
+  background(125);
+}
+
+void draw()
+{              
+  rect(50, 50, 100, 100);
+}
+
+                                                
