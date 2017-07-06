@@ -1,0 +1,6 @@
+Instance  2 Signal SingleBandLevelDet2single_out trap value 37 register mult_out
+Instance  3 Signal RealTimeDisplay2_ReadBackAlg2 trap value 41 register MAC_out
+Instance  8 Signal RealTimeDisplay2_3_ReadBackAlg4 trap value 116 register MAC_out
+Instance  11 Signal RealTimeDisplay2_2_ReadBackAlg1 trap value 204 register MAC_out
+Instance  12 Signal SingleBandLevelDet4single_out trap value 236 register mult_out
+Instance  13 Signal RealTimeDisplay3_ReadBackAlg3 trap value 240 register MAC_out
